@@ -33,7 +33,7 @@ variables = dict(
     fs_type='ext4',
     grub_cfg_path='/boot/grub',  # distribution-dependent
     builder_name='<your name here>',
-    keymap='fr'
+    keymap='fr',
     # Network config in /etc/sysconfig without systemd
     onboot='yes',
     iface='eth0',
