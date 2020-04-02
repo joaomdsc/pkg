@@ -55,3 +55,6 @@ html_theme = 'alabaster'
 html_static_path = []
 
 show_authors = True
+
+# readthedocs.io fails without this
+master_doc = 'index'
