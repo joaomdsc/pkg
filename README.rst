@@ -1,1 +1,3 @@
-Documentation for this package can be found on https://pkg.readthedocs.io.
+Documentation for this software can be found on `pkg.readthedocs.io`_.
+
+.. _pkg.readthedocs.io: https://pkg.readthedocs.io

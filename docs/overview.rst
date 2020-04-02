@@ -1,6 +1,10 @@
 Overview
 ========
 
+|github| Development of this software is hosted at `github.com/joaomdsc/pkg`_.
+
+|rtd| Documentation for this software can be found on `pkg.readthedocs.io`_.
+
 What's in here ?
 ----------------
 
@@ -39,7 +43,12 @@ value of the LFS book and to get that customized Linux system up and
 running. For all the details on how to use the software, see the pkg_lfs
 documentation in :ref:`automating-lfs`.
 
+.. sectionauthor:: Joao Moreira <joao.moreiradsc@gmail.com>
+
+.. |github| image:: /img/GitHub-Mark-32px.png
+.. |rtd| image:: /img/rtd-logo-dark-32px.png
+
+.. _github.com/joaomdsc/pkg: https://github.com/joaomdsc/pkg
+.. _pkg.readthedocs.io: https://pkg.readthedocs.io
 .. _Linux From Scratch: http://www.linuxfromscratch.org/
 .. _the LFS book: http://www.linuxfromscratch.org/lfs/view/stable-systemd/
-
-.. sectionauthor:: Joao Moreira <joao.moreiradsc@gmail.com>
