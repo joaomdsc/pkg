@@ -1,1 +1,1 @@
-Please see the documentation for this package on readthedocs.io.
+Documentation for this package can be found on https://pkg.readthedocs.io.
