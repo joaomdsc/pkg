@@ -8,7 +8,7 @@ import hashlib
 #-------------------------------------------------------------------------------
 
 class Checksum():
-    def __init__(self, type, value, pkgid=None):
+    def __init__(self, type, value=None, pkgid=None):
         self.type = type
         self.pkgid = pkgid
         self.value = value
@@ -56,6 +56,14 @@ class Checksum():
 
         return self.value == sh.hexdigest()
 
+    def get_hash(self, filepath):
+        sh = hashlib.__dict__[self.type]()
+        with open(filepath, 'rb') as f:
+            for data in iter(lambda: f.read(4096), b''):
+                sh.update(data)
+        self.value = sh.hexdigest()
+        return self.value
+
 #===============================================================================
 # main - 
 #===============================================================================
@@ -63,15 +71,26 @@ class Checksum():
 if __name__ == '__main__':
     # print("""This module is not meant to run directly.""")
 
-    if len(sys.argv) != 4:
-        print(f'Usage: {sys.argv[0]} <type> <filepath> <checksum-value>')
+    # if len(sys.argv) != 4:
+    #     print(f'Usage: {sys.argv[0]} <type> <filepath> <checksum-value>')
+    #     print('Supported types include md5, sha1, sha256, sha512. See python hashlib doc')
+    #     print('for the complete list of supported types.')
+    #     exit(-1)
+    # type = sys.argv[1]
+    # filepath = sys.argv[2]
+    # value = sys.argv[3]
+
+    # c = Checksum(type, value)
+    # print(f'checksum: {"ok" if c.check(filepath) else "NOK"}')
+
+    if len(sys.argv) != 3:
+        print(f'Usage: {sys.argv[0]} <type> <filepath>')
         print('Supported types include md5, sha1, sha256, sha512. See python hashlib doc')
         print('for the complete list of supported types.')
         exit(-1)
     type = sys.argv[1]
     filepath = sys.argv[2]
-    value = sys.argv[3]
 
-    c = Checksum(type, value)
-    print(f'checksum: {"ok" if c.check(filepath) else "NOK"}')
+    c = Checksum(type)
+    print(f'checksum: {c.get_hash(filepath)}')
 
